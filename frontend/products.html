@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+        }
+        .product-details {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .product-details p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <h1 id="product-name">Loading...</h1>
+        <img id="product-image" src="" alt="Product Image" />
+        <div class="product-details">
+            <p><strong>Brand:</strong> <span id="product-brand"></span></p>
+            <p><strong>Category:</strong> <span id="product-category"></span></p>
+            <p><strong>List Price:</strong> $<span id="list-price"></span></p>
+            <p><strong>Selling Price:</strong> $<span id="selling-price"></span></p>
+            <p><strong>Description:</strong> <span id="product-description"></span></p>
+            <p><strong>Technical Details:</strong> <span id="technical-details"></span></p>
+            <p><strong>Stock:</strong> <span id="stock"></span></p>
+            <p><strong>Variants:</strong> <span id="variants"></span></p>
+        </div>
+    </div>
+
+    <script src="backend\products\products.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .form-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>E-commerce Analytics and Recommendation System</h2>
+        
+        <div class="form-group">
+            <button onclick="fetchCustomers()">View Customers</button>
+            <button onclick="fetchProducts()">View Products</button>
+            <button onclick="fetchSales()">View Sales</button>
+        </div>
+
+        <div id="data"></div>
+    </div>
+
+    <script>
+        const apiUrl = 'http://localhost:5000';
+
+        async function fetchCustomers() {
+            const res = await fetch(`${apiUrl}/customers`);
+            const data = await res.json();
+            displayData(data);
+        }
+
+        async function fetchProducts() {
+            const res = await fetch(`${apiUrl}/products`);
+            const data = await res.json();
+            displayData(data);
+        }
+
+        async function fetchSales() {
+            const res = await fetch(`${apiUrl}/sales`);
+            const data = await res.json();
+            displayData(data);
+        }
+
+        function displayData(data) {
+            const dataDiv = document.getElementById('data');
+            dataDiv.innerHTML = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
